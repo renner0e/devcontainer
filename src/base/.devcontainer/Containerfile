@@ -60,7 +60,6 @@ chmod +x /usr/libexec/bootc-base-imagectl
 
 # Cleanup
 dnf5 copr -y disable ublue-os/packages
-dnf5 clean all
 RUNEOF
 
 LABEL \
