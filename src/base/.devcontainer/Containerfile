@@ -8,7 +8,7 @@ ENV USERNAME="ublue"
 
 COPY --from=bootc --chmod=0755 /usr/libexec/bootc-base-imagectl /usr/libexec/bootc-base-imagectl
 COPY --from=bootc /usr/share/doc/bootc-base-imagectl /usr/share/doc/
-COPY --from=cosign /ko-app/cosign /usr/local/bin/cosign
+COPY --from=cosign /ko-app/cosign /usr/bin/cosign
 
 RUN --mount=type=tmpfs,dst=/var \
     --mount=type=tmpfs,dst=/tmp \
