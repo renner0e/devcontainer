@@ -20,6 +20,7 @@ dnf5 copr -y enable ublue-os/packages
 
 dnf5 install -y \
     ShellCheck \
+    attr \
     buildah \
     cpp \
     erofs-utils \
@@ -54,9 +55,13 @@ else
 fi
 chmod +x /usr/bin/macadam
 macadam completion bash >/etc/bash_completion.d/macadam.sh
+setfattr -n user.component -v "macadam" /usr/bin/macadam
+setfattr -n user.update-interval -v "quarterly" /usr/bin/macadam
 
 # bootc-base-imagectl
 chmod +x /usr/libexec/bootc-base-imagectl
+
+setfattr -n user.component -v "cosign" /usr/bin/cosign
 
 # Cleanup
 dnf5 copr -y disable ublue-os/packages
