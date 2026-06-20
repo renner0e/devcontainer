@@ -23,6 +23,7 @@ dnf5 install -y \
     cpp \
     erofs-utils \
     golang-oras \
+    git \
     jq \
     just \
     openssl \
